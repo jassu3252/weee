@@ -1,0 +1,161 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #343a40, #212529); /* Dark tones */
+  color: #fff; /* White text to contrast the dark background */
+}
+
+a {
+  text-decoration: none;
+  color: #000; /* Default black text for links */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.robot-thinking {
+  width: 50%;
+}
+
+.robot-thinking img {
+  width: 100%;
+  height: auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212529;
+  padding: 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .logo {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+/* Circular Rectangle Navigation Buttons */
+header nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff; /* White background for the button */
+  color: #000; /* Black text */
+  border-radius: 20px; /* Creates a circular rectangle effect */
+  border: 2px solid #fff; /* Optional: white border to emphasize the button */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+header nav ul li a:hover {
+  background-color: #000; /* Change background to black on hover */
+  color: #fff; /* Change text to white on hover */
+  border: 2px solid #000; /* Optional: change border to black on hover */
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+  display: none; /* Initially hide content while loading */
+}
+
+.products h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #333;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.product-card h2 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+.product-card button {
+  background-color: #af4261;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #f3ec78;
+}
+
+/* Footer */
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* Hide main content until loading is done */
+#loading-screen + header,
+#loading-screen + main,
+#loading-screen + footer {
+  display: block;
+}
